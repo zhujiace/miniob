@@ -14,6 +14,5 @@ See the Mulan PSL v2 for more details. */
 
 int main(int argc, char **argv)
 {
-  //test
   return 0;
 }

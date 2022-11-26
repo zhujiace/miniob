@@ -56,6 +56,8 @@ public:
    */
   RC open(const char *meta_file, const char *base_dir, CLogManager *clog_manager);
 
+  //RC destroy(const char* dir);
+
   RC insert_record(Trx *trx, int value_num, const Value *values);
   RC update_record(Trx *trx, const char *attribute_name, const Value *value, int condition_num,
       const Condition conditions[], int *updated_count);
@@ -74,6 +76,8 @@ public:
   {
     return record_handler_;
   }
+
+  RC drop(const char *path, const char *name, const char *base_dir); //drop table
 
 public:
   const char *name() const;
@@ -122,6 +126,7 @@ private:
   DiskBufferPool *data_buffer_pool_ = nullptr;   /// 数据文件关联的buffer pool
   RecordFileHandler *record_handler_ = nullptr;  /// 记录操作
   std::vector<Index *> indexes_;
+  RC remove_record_handler();//drop table
 };
 
 #endif  // __OBSERVER_STORAGE_COMMON_TABLE_H__

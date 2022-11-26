@@ -34,6 +34,8 @@ public:
 
   RC create_table(const char *table_name, int attribute_count, const AttrInfo *attributes);
 
+  RC drop_table(const char* table_name); //drop table
+
   Table *find_table(const char *table_name) const;
 
   const char *name() const;

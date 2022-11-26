@@ -89,7 +89,7 @@ public:
    * @return
    */
   RC drop_table(const char *dbname, const char *relation_name);
-
+  
   /**
    * 该函数在关系relName的属性attrName上创建名为indexName的索引。
    * 函数首先检查在标记属性上是否已经存在一个索引，
